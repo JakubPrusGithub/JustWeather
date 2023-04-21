@@ -16,12 +16,12 @@ struct MainView: View {
                     Text("CURRENT")
                     Spacer()
                     Text("25")
-                        .font(.custom("system", size: 250))
+                        .font(.custom("GothicA1-Medium", size: 250))
                 }
                 .offset(x: 40, y: 40)
             }
             Circle()
-                .foregroundColor(.orange)
+                .foregroundColor(.purple)
                 .blur(radius: 30)
                 .offset(x: 0, y: -100)
             Circle()
@@ -29,7 +29,7 @@ struct MainView: View {
                 .blur(radius: 30)
                 .offset(x: 0, y: -50)
             Circle()
-                .foregroundColor(.purple)
+                .foregroundColor(.orange)
                 .blur(radius: 30)
                 .offset(x: 25, y: 0)
             Circle()
@@ -50,7 +50,7 @@ struct MainView: View {
                 .padding(.top, 30)
                 .padding(.horizontal)
                 Text("20APR'23\nWARSAW PL \nPOLAND < > DAILY\nWEATHER")
-                    .font(.custom("system", size: 50))
+                    .font(.custom("GothicA1-Medium", size: 50))
                     .padding(.top, 30)
                 Divider()
                 VStack{
@@ -60,7 +60,7 @@ struct MainView: View {
                         Spacer()
                         Text("10°C")
                     }
-                    .padding(.bottom)
+                    .padding(.vertical)
                     HStack{
                         Text("MAXIMAL")
                         Spacer()
@@ -70,6 +70,7 @@ struct MainView: View {
                 .padding()
                 Spacer()
             }
+            .font(.custom("GothicA1-Medium", size: 20))
         }
     }
 }

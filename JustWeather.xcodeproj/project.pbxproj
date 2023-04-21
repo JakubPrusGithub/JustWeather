@@ -15,6 +15,7 @@
 		D3EBC01A29F1D95600250369 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01929F1D95600250369 /* WeatherManager.swift */; };
 		D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01C29F1D97000250369 /* WeatherSource.swift */; };
 		D3EBC02029F1E45900250369 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01F29F1E45900250369 /* MainView.swift */; };
+		D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		D3EBC01929F1D95600250369 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D3EBC01C29F1D97000250369 /* WeatherSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSource.swift; sourceTree = "<group>"; };
 		D3EBC01F29F1E45900250369 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D3EBC02329F304CB00250369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		D3EBC00629EDCE8900250369 /* JustWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D3EBC02329F304CB00250369 /* Info.plist */,
 				D3EBC02229F1E49100250369 /* Assets */,
 				D3EBC02129F1E46700250369 /* ViewControllers */,
 				D3EBC01E29F1E44300250369 /* Views */,
@@ -121,10 +125,19 @@
 		D3EBC02229F1E49100250369 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D3EBC02429F304D900250369 /* Fonts */,
 				D3EBC00B29EDCE8A00250369 /* Assets.xcassets */,
 				D3EBC00D29EDCE8A00250369 /* Preview Content */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D3EBC02429F304D900250369 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +200,7 @@
 			files = (
 				D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */,
 				D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */,
+				D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +348,7 @@
 				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JustWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -364,6 +379,7 @@
 				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JustWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
