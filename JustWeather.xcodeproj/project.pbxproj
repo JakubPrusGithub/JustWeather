@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */; };
-		D3EBC00A29EDCE8900250369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00929EDCE8900250369 /* ContentView.swift */; };
 		D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00B29EDCE8A00250369 /* Assets.xcassets */; };
 		D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */; };
 		D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01629F1D4DC00250369 /* WeatherModel.swift */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		D3EBC00429EDCE8900250369 /* JustWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustWeatherApp.swift; sourceTree = "<group>"; };
-		D3EBC00929EDCE8900250369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3EBC00B29EDCE8A00250369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3EBC01629F1D4DC00250369 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 				D3EBC01829F1D94100250369 /* Managers */,
 				D3EBC01529F1D4BB00250369 /* Models */,
 				D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */,
-				D3EBC00929EDCE8900250369 /* ContentView.swift */,
 			);
 			path = JustWeather;
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3EBC00A29EDCE8900250369 /* ContentView.swift in Sources */,
 				D3EBC02029F1E45900250369 /* MainView.swift in Sources */,
 				D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */,
 				D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */,
