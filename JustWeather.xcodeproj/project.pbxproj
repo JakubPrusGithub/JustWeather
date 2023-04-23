@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4011043BF6E011347E358D2E /* Pods_JustWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6322C401C9D0646E3052EAD2 /* Pods_JustWeather.framework */; };
 		D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */; };
 		D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00B29EDCE8A00250369 /* Assets.xcassets */; };
 		D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B4F980BF6997D4ACCD21878 /* Pods-JustWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.debug.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		6322C401C9D0646E3052EAD2 /* Pods_JustWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBC00429EDCE8900250369 /* JustWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustWeatherApp.swift; sourceTree = "<group>"; };
 		D3EBC00B29EDCE8A00250369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		D3EBC01F29F1E45900250369 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D3EBC02329F304CB00250369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
+		EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.release.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4011043BF6E011347E358D2E /* Pods_JustWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C34F0A873F489B2336542E45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6322C401C9D0646E3052EAD2 /* Pods_JustWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C52A0D07B86C41F73B76A5D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B4F980BF6997D4ACCD21878 /* Pods-JustWeather.debug.xcconfig */,
+				EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3EBBFFB29EDCE8900250369 = {
 			isa = PBXGroup;
 			children = (
 				D3EBC00629EDCE8900250369 /* JustWeather */,
 				D3EBC00529EDCE8900250369 /* Products */,
+				C52A0D07B86C41F73B76A5D6 /* Pods */,
+				C34F0A873F489B2336542E45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3EBC01229EDCE8A00250369 /* Build configuration list for PBXNativeTarget "JustWeather" */;
 			buildPhases = (
+				E87658D1E062336D6486EEEC /* [CP] Check Pods Manifest.lock */,
 				D3EBC00029EDCE8900250369 /* Sources */,
 				D3EBC00129EDCE8900250369 /* Frameworks */,
 				D3EBC00229EDCE8900250369 /* Resources */,
+				1DB0E0D4A4385CD3BDAF4702 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DB0E0D4A4385CD3BDAF4702 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JustWeather/Pods-JustWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JustWeather/Pods-JustWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustWeather/Pods-JustWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E87658D1E062336D6486EEEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3EBC00029EDCE8900250369 /* Sources */ = {
@@ -269,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -323,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -335,6 +403,7 @@
 		};
 		D3EBC01329EDCE8A00250369 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B4F980BF6997D4ACCD21878 /* Pods-JustWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +435,7 @@
 		};
 		D3EBC01429EDCE8A00250369 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
