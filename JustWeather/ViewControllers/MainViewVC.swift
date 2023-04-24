@@ -12,8 +12,7 @@ class MainViewVC: ObservableObject {
     
     @Published var currentWeather: WeatherModel?
     var cancellables = Set<AnyCancellable>()
-    let source = WeatherProvider()
-    
+    let source = MockWeatherProvider()
     
     func fetchWeather() {
         source.getWeather()

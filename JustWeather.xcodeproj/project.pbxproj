@@ -16,7 +16,7 @@
 		D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01C29F1D97000250369 /* WeatherSource.swift */; };
 		D3EBC02029F1E45900250369 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01F29F1E45900250369 /* MainView.swift */; };
 		D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */; };
-		D3EBC02B29F5AD9F00250369 /* MainView_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC02A29F5AD9F00250369 /* MainView_ViewController.swift */; };
+		D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		D3EBC01F29F1E45900250369 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D3EBC02329F304CB00250369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
-		D3EBC02A29F5AD9F00250369 /* MainView_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView_ViewController.swift; sourceTree = "<group>"; };
+		D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
 		EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.release.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +141,7 @@
 		D3EBC02129F1E46700250369 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3EBC02A29F5AD9F00250369 /* MainView_ViewController.swift */,
+				D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */,
 				D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */,
 				D3EBC01A29F1D95600250369 /* WeatherManager.swift in Sources */,
-				D3EBC02B29F5AD9F00250369 /* MainView_ViewController.swift in Sources */,
+				D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */,
 				D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

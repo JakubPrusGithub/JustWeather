@@ -42,9 +42,11 @@ class WeatherProvider: WeatherProviding {
     
 }
 
-//class MockWeatherProvider: WeatherProviding {
-//    func getWeather() -> AnyPublisher<WeatherModel?, Error> {
-//        //
-//    }
-//
-//}
+class MockWeatherProvider: WeatherProviding {
+    func getWeather() -> AnyPublisher<WeatherModel?, Error> {
+        let mockWeather = WeatherModel.sampleWeather
+        return Just(mockWeather)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+}
