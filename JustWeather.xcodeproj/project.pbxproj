@@ -17,6 +17,7 @@
 		D3EBC02029F1E45900250369 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01F29F1E45900250369 /* MainView.swift */; };
 		D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */; };
 		D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */; };
+		D3EBC03029F7317300250369 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02F29F7317300250369 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D3EBC02329F304CB00250369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
 		D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
+		D3EBC02F29F7317300250369 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.release.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,8 @@
 		D3EBC00629EDCE8900250369 /* JustWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */,
+				D3EBC02F29F7317300250369 /* .swiftlint.yml */,
 				D3EBC02329F304CB00250369 /* Info.plist */,
 				D3EBC02229F1E49100250369 /* Assets */,
 				D3EBC02129F1E46700250369 /* ViewControllers */,
@@ -93,7 +97,6 @@
 				D3EBC01B29F1D96400250369 /* Sources */,
 				D3EBC01829F1D94100250369 /* Managers */,
 				D3EBC01529F1D4BB00250369 /* Models */,
-				D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */,
 			);
 			path = JustWeather;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				D3EBC00129EDCE8900250369 /* Frameworks */,
 				D3EBC00229EDCE8900250369 /* Resources */,
 				1DB0E0D4A4385CD3BDAF4702 /* [CP] Embed Pods Frameworks */,
+				D3EBC02C29F72A3B00250369 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -224,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EBC03029F7317300250369 /* .swiftlint.yml in Resources */,
 				D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */,
 				D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */,
 				D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */,
@@ -249,6 +254,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustWeather/Pods-JustWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D3EBC02C29F72A3B00250369 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		E87658D1E062336D6486EEEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
