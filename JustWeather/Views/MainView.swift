@@ -16,10 +16,10 @@ struct MainView: View {
     }
     
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 Spacer()
-                HStack(alignment: .lastTextBaseline){
+                HStack(alignment: .lastTextBaseline) {
                     Text("CURRENT")
                     Spacer()
                     Text(Int(weather.currentWeather?.temperature.temp.rounded() ?? 10).description)
@@ -48,8 +48,8 @@ struct MainView: View {
                 .blur(radius: 20)
                 .offset(x: 75, y: 400)
                 .frame(width: 125)
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Text("WEATHER FORECAST")
                     Spacer()
                     Text(weather.currentWeather?.currWeather.first?.main ?? "None")
@@ -60,15 +60,15 @@ struct MainView: View {
                     .font(.custom("GothicA1-Medium", size: 55))
                     .padding(.top, 30)
                 Divider()
-                VStack{
+                VStack {
                     Text("[TEMPERATURE]")
-                    HStack{
+                    HStack {
                         Text("MINIMAL")
                         Spacer()
                         Text((weather.currentWeather?.temperature.temp_min.rounded().description ?? "cos") + "°C")
                     }
                     .padding(.vertical)
-                    HStack{
+                    HStack {
                         Text("MAXIMAL")
                         Spacer()
                         Text((weather.currentWeather?.temperature.temp_max.rounded().description ?? "cos") + "°C")
@@ -79,7 +79,7 @@ struct MainView: View {
             }
             .font(.custom("GothicA1-Medium", size: 20))
         }
-        .onAppear{
+        .onAppear {
             weather.fetchWeather()
         }
     }

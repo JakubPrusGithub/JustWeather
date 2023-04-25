@@ -12,6 +12,7 @@ import Swinject
 struct JustWeatherApp: App {
     
     let container: Container = {
+        
         let container = Container()
         container.register(WeatherProviding.self) { _ in
             
@@ -22,6 +23,7 @@ struct JustWeatherApp: App {
             // WeatherProvider()
         }
         .inObjectScope(.container)
+        
         return container
     }()
     

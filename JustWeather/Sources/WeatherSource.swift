@@ -22,7 +22,7 @@ class WeatherProvider: WeatherProviding {
         guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }
         
         return URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap{ res in
+            .tryMap { res in
 
                 guard let response = res.response as? HTTPURLResponse,
                       response.statusCode >= 200 && response.statusCode <= 300 else {

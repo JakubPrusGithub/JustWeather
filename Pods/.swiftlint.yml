@@ -3,7 +3,13 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - colon
   - comma
   - control_statement
+  - large_tuple
+  - function_parameter_count
   - trailing_whitespace
+  - superfluous_disable_command
+  - orphaned_doc_comment
+  - force_cast
+  - trailing_comma
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Find all the available rules by running: `swiftlint rules`
 
@@ -29,19 +35,18 @@ allow_zero_lintable_files: false
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
-force_cast: warning # implicitly
 force_try:
   severity: warning # explicitly
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
-line_length: 200
+line_length: 300
 # they can set both implicitly with an array
 type_body_length:
   - 300 # warning
   - 400 # error
 # or they can set both explicitly
 file_length:
-  warning: 500
+  warning: 600
   error: 1200
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names

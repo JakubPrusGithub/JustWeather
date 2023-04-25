@@ -12,12 +12,10 @@
 		D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00B29EDCE8A00250369 /* Assets.xcassets */; };
 		D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */; };
 		D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01629F1D4DC00250369 /* WeatherModel.swift */; };
-		D3EBC01A29F1D95600250369 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01929F1D95600250369 /* WeatherManager.swift */; };
 		D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01C29F1D97000250369 /* WeatherSource.swift */; };
 		D3EBC02029F1E45900250369 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01F29F1E45900250369 /* MainView.swift */; };
 		D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */; };
 		D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */; };
-		D3EBC03029F7317300250369 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02F29F7317300250369 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +26,11 @@
 		D3EBC00B29EDCE8A00250369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3EBC01629F1D4DC00250369 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		D3EBC01929F1D95600250369 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D3EBC01C29F1D97000250369 /* WeatherSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSource.swift; sourceTree = "<group>"; };
 		D3EBC01F29F1E45900250369 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D3EBC02329F304CB00250369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
 		D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
-		D3EBC02F29F7317300250369 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.release.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,13 +85,11 @@
 			isa = PBXGroup;
 			children = (
 				D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */,
-				D3EBC02F29F7317300250369 /* .swiftlint.yml */,
 				D3EBC02329F304CB00250369 /* Info.plist */,
 				D3EBC02229F1E49100250369 /* Assets */,
 				D3EBC02129F1E46700250369 /* ViewControllers */,
 				D3EBC01E29F1E44300250369 /* Views */,
 				D3EBC01B29F1D96400250369 /* Sources */,
-				D3EBC01829F1D94100250369 /* Managers */,
 				D3EBC01529F1D4BB00250369 /* Models */,
 			);
 			path = JustWeather;
@@ -115,14 +109,6 @@
 				D3EBC01629F1D4DC00250369 /* WeatherModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D3EBC01829F1D94100250369 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				D3EBC01929F1D95600250369 /* WeatherManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		D3EBC01B29F1D96400250369 /* Sources */ = {
@@ -179,7 +165,7 @@
 				D3EBC00129EDCE8900250369 /* Frameworks */,
 				D3EBC00229EDCE8900250369 /* Resources */,
 				1DB0E0D4A4385CD3BDAF4702 /* [CP] Embed Pods Frameworks */,
-				D3EBC02C29F72A3B00250369 /* ShellScript */,
+				D3EBC03429F7E82F00250369 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -228,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3EBC03029F7317300250369 /* .swiftlint.yml in Resources */,
 				D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */,
 				D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */,
 				D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */,
@@ -255,7 +240,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustWeather/Pods-JustWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D3EBC02C29F72A3B00250369 /* ShellScript */ = {
+		D3EBC03429F7E82F00250369 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,7 +289,6 @@
 				D3EBC02029F1E45900250369 /* MainView.swift in Sources */,
 				D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */,
 				D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */,
-				D3EBC01A29F1D95600250369 /* WeatherManager.swift in Sources */,
 				D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */,
 				D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */,
 			);

@@ -7,14 +7,13 @@
 
 import Foundation
 
-
 struct WeatherModel: Decodable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case id
         case place = "name"
-        case CurrentWeather = "weather"
-        case Temperature = "main"
+        case currentWeather = "weather"
+        case temperature = "main"
     }
     
     struct CurrentWeather: Decodable { // Current weather
@@ -33,12 +32,12 @@ struct WeatherModel: Decodable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: CodingKeys.id)
         place = try container.decode(String.self, forKey: CodingKeys.place)
-        currWeather = try container.decode([CurrentWeather].self, forKey: CodingKeys.CurrentWeather)
-        temperature = try container.decode(Temperature.self, forKey: CodingKeys.Temperature)
+        currWeather = try container.decode([CurrentWeather].self, forKey: CodingKeys.currentWeather)
+        temperature = try container.decode(Temperature.self, forKey: CodingKeys.temperature)
     }
     
     // MARK: init for mock data
-    init(id: Int, place: String, currWeather: [CurrentWeather], temperature: Temperature){
+    init(id: Int, place: String, currWeather: [CurrentWeather], temperature: Temperature) {
         self.id = id
         self.place = place
         self.currWeather = currWeather
