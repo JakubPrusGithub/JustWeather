@@ -17,6 +17,8 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
+            
+            // MARK: Current Temperature
             VStack {
                 Spacer()
                 HStack(alignment: .lastTextBaseline) {
@@ -27,27 +29,33 @@ struct MainView: View {
                 }
                 .offset(x: 40, y: 40)
             }
-            Circle()
-                .foregroundColor(.purple)
-                .blur(radius: 30)
-                .offset(x: 0, y: -100)
-            Circle()
-                .foregroundColor(.red)
-                .blur(radius: 30)
-                .offset(x: 0, y: -50)
-            Circle()
-                .foregroundColor(.orange)
-                .blur(radius: 30)
-                .offset(x: 25, y: 0)
-            Circle()
-                .foregroundColor(.white)
-                .blur(radius: 30)
-                .offset(x: 50, y: 50)
-            Circle()
-                .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
-                .blur(radius: 20)
-                .offset(x: 75, y: 400)
-                .frame(width: 125)
+            
+            // MARK: Circles
+            Group {
+                Circle()
+                    .foregroundColor(.purple)
+                    .blur(radius: 30)
+                    .offset(x: 0, y: -100)
+                Circle()
+                    .foregroundColor(.red)
+                    .blur(radius: 30)
+                    .offset(x: 0, y: -50)
+                Circle()
+                    .foregroundColor(.orange)
+                    .blur(radius: 30)
+                    .offset(x: 25, y: 0)
+                Circle()
+                    .foregroundColor(.white)
+                    .blur(radius: 30)
+                    .offset(x: 50, y: 50)
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
+                    .blur(radius: 20)
+                    .offset(x: 75, y: 400)
+                    .frame(width: 125)
+            }
+            
+            // MARK: Weather Forecast
             VStack {
                 HStack {
                     Text("WEATHER FORECAST")
@@ -56,22 +64,28 @@ struct MainView: View {
                 }
                 .padding(.top, 30)
                 .padding(.horizontal)
-                Text("21APR'23\n\(weather.currentWeather?.place.uppercased() ?? "cos") PL\nPOLAND <\n> DAILY\nWEATHER")
-                    .font(.custom("GothicA1-Medium", size: 55))
-                    .padding(.top, 30)
+                VStack(alignment: .leading) {
+                    Text("21APR'23")
+                    Text((weather.currentWeather?.place.uppercased() ?? "") + " PL")
+                    Text("POLAND <")
+                    Text("> DAILY")
+                    Text("WEATHER")
+                }
+                .font(.custom("GothicA1-Medium", size: 55))
+                .padding(.top, 30)
                 Divider()
                 VStack {
                     Text("[TEMPERATURE]")
                     HStack {
                         Text("MINIMAL")
                         Spacer()
-                        Text((weather.currentWeather?.temperature.temp_min.rounded().description ?? "cos") + "°C")
+                        Text((weather.currentWeather?.temperature.temp_min.rounded().description ?? "None") + "°C")
                     }
                     .padding(.vertical)
                     HStack {
                         Text("MAXIMAL")
                         Spacer()
-                        Text((weather.currentWeather?.temperature.temp_max.rounded().description ?? "cos") + "°C")
+                        Text((weather.currentWeather?.temperature.temp_max.rounded().description ?? "None") + "°C")
                     }
                 }
                 .padding()
