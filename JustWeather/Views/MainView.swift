@@ -65,7 +65,7 @@ struct MainView: View {
                 .padding(.top, 30)
                 .padding(.horizontal)
                 VStack(alignment: .leading) {
-                    Text("21APR'23")
+                    Text(weather.getCurrentDate())
                     Text((weather.currentWeather?.place.uppercased() ?? "") + " PL")
                     Text("POLAND <")
                     Text("> DAILY")

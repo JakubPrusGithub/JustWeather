@@ -28,4 +28,10 @@ class MainViewVC: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+    func getCurrentDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "ddMMM''yy"
+        return formatter.string(from: Date()).uppercased()
+    }
 }
