@@ -9,19 +9,15 @@ import Foundation
 import Combine
 
 protocol WeatherProviding {
-    func getWeather() -> AnyPublisher<WeatherModel?, Error>
+    func getWeather(url: URL) -> AnyPublisher<WeatherModel?, Error>
 }
 
 class WeatherProvider: WeatherProviding {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func getWeather() -> AnyPublisher<WeatherModel?, Error> {
-        
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=53.428543&lon=14.552812&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
-        guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }
-        
-        return URLSession.shared.dataTaskPublisher(for: url)
+    func getWeather(url: URL) -> AnyPublisher<WeatherModel?, Error> {
+        URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { res in
 
                 guard let response = res.response as? HTTPURLResponse,
@@ -43,7 +39,7 @@ class WeatherProvider: WeatherProviding {
 }
 
 class MockWeatherProvider: WeatherProviding {
-    func getWeather() -> AnyPublisher<WeatherModel?, Error> {
+    func getWeather(url: URL) -> AnyPublisher<WeatherModel?, Error> {
         let mockWeather = WeatherModel.sampleWeather
         return Just(mockWeather)
             .setFailureType(to: Error.self)

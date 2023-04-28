@@ -66,16 +66,25 @@ struct MainView: View {
                 .padding(.horizontal)
                 VStack(alignment: .leading) {
                     Text(weather.getCurrentDate())
-                    Text((weather.currentWeather?.place.uppercased() ?? "") + " PL")
-                    Text("POLAND <")
+                    Text(weather.cityName + " - " + weather.countryCode + "")
+                        .scaledToFit()
+                        .minimumScaleFactor(0.5)
+                    Text("\(weather.countryName) <")
+                        .scaledToFit()
+                        .minimumScaleFactor(0.5)
                     Text("> DAILY")
                     Text("WEATHER")
                 }
                 .font(.custom("GothicA1-Medium", size: 55))
                 .padding(.top, 30)
+                .padding(.horizontal)
+                
                 Divider()
                 VStack {
                     Text("[TEMPERATURE]")
+                        .onTapGesture {
+                            weather.getLocation()
+                        }
                     HStack {
                         Text("MINIMAL")
                         Spacer()
@@ -95,6 +104,8 @@ struct MainView: View {
         }
         .onAppear {
             weather.fetchWeather()
+            print("\(weather.currentLocation.locationManager.location?.coordinate.latitude)")
+            weather.getLocation()
         }
     }
 }
