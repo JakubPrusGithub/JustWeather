@@ -36,8 +36,10 @@ struct SplashScreenView: View {
             withAnimation(.spring(dampingFraction: 0.5).delay(2)) {
                 textOffset = 75
             }
-            withAnimation(.easeIn.delay(3)) {
-                finishedSplashScreen = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation(.easeIn) {
+                    finishedSplashScreen = true
+                }
             }
         }
     }

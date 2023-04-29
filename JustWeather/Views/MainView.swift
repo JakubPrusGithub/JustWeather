@@ -18,17 +18,11 @@ struct MainView: View {
     
     var body: some View {
         Group {
-            if isShowingWeather, weather.isWeatherFetched {
+            if isShowingWeather && weather.isWeatherFetched {
                 showWeather
             } else {
                 SplashScreenView(finishedSplashScreen: $isShowingWeather)
             }
-        }
-        .onChange(of: weather.isWeatherFetched) { newValue in
-            print(newValue)
-        }
-        .onAppear {
-            print(weather.isWeatherFetched)
         }
     }
 }
@@ -126,10 +120,6 @@ extension MainView {
                 Spacer()
             }
             .font(.custom("GothicA1-Medium", size: 20))
-        }
-        .onAppear {
-            weather.fetchWeather()
-            weather.getLocation()
         }
     }
 }

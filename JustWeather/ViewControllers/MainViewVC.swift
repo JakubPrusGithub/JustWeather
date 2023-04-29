@@ -27,12 +27,16 @@ class MainViewVC: ObservableObject {
         getLocation()
     }
     
-    func fetchWeather() {
-        weatherSource.getWeather(url: generateURL())
+    func fetchWeather(lat: Double, lon: Double) {
+        
+        let url = generateURL(lat: lat, lon: lon)
+        
+        weatherSource.getWeather(url: url)
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 
             } receiveValue: { [weak self] weather in
+                print(weather)
                 self?.currentWeather = weather
                 self?.isWeatherFetched = true
             }
@@ -46,8 +50,8 @@ class MainViewVC: ObservableObject {
         return formatter.string(from: Date()).uppercased()
     }
     
-    func generateURL() -> URL {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=53.428543&lon=14.552812&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
+    func generateURL(lat: Double, lon: Double) -> URL {
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
         guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }
         return url
     }
@@ -67,6 +71,7 @@ class MainViewVC: ObservableObject {
                     self.cityName = placemark.locality?.uppercased() ?? "CITY"
                     self.countryName = placemark.country?.uppercased() ?? "COUNTRY"
                     self.countryCode = placemark.isoCountryCode ?? "CODE"
+                    self.fetchWeather(lat: currLocalization.coordinate.latitude, lon: currLocalization.coordinate.longitude)
                 }
             }
             

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct WeatherModel: Decodable, Identifiable {
+struct WeatherModel: Decodable, Identifiable, Equatable {
+    
+    static func == (lhs: WeatherModel, rhs: WeatherModel) -> Bool {
+        lhs.id == rhs.id
+    }
     
     enum CodingKeys: String, CodingKey {
         case id
