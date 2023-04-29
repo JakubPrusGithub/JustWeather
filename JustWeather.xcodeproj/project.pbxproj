@@ -17,6 +17,7 @@
 		D3EBC02929F3064A00250369 /* GothicA1-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */; };
 		D3EBC02B29F5AD9F00250369 /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */; };
 		D3EBC03829FBEEE200250369 /* LocationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC03729FBEEE200250369 /* LocationSource.swift */; };
+		D3EBC03A29FDB7AD00250369 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC03929FDB7AD00250369 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D3EBC02829F3064A00250369 /* GothicA1-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothicA1-Medium.ttf"; sourceTree = "<group>"; };
 		D3EBC02A29F5AD9F00250369 /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
 		D3EBC03729FBEEE200250369 /* LocationSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSource.swift; sourceTree = "<group>"; };
+		D3EBC03929FDB7AD00250369 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		EFE2903B402D9328B124CF76 /* Pods-JustWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustWeather.release.xcconfig"; path = "Target Support Files/Pods-JustWeather/Pods-JustWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EBC01F29F1E45900250369 /* MainView.swift */,
+				D3EBC03929FDB7AD00250369 /* SplashScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EBC03A29FDB7AD00250369 /* SplashScreenView.swift in Sources */,
 				D3EBC02029F1E45900250369 /* MainView.swift in Sources */,
 				D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */,
 				D3EBC01729F1D4DC00250369 /* WeatherModel.swift in Sources */,

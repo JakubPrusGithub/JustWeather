@@ -16,6 +16,7 @@ class MainViewVC: ObservableObject {
     @Published var countryName = ""
     @Published var countryCode = ""
     @Published var cityName = ""
+    @Published var isWeatherFetched = false
     
     var cancellables = Set<AnyCancellable>()
     let weatherSource: WeatherProviding
@@ -33,6 +34,7 @@ class MainViewVC: ObservableObject {
                 
             } receiveValue: { [weak self] weather in
                 self?.currentWeather = weather
+                self?.isWeatherFetched = true
             }
             .store(in: &cancellables)
     }
@@ -54,17 +56,17 @@ class MainViewVC: ObservableObject {
         
         currentLocation.$currLocalization.receive(on: DispatchQueue.main).sink { _ in
             guard let currLocalization = self.currentLocation.currLocalization else {
-                self.countryName = "VOID"
-                self.cityName = "VOID"
-                self.countryCode = "VOID"
+                self.countryName = "CITY"
+                self.cityName = "COUNTRY"
+                self.countryCode = "CODE"
                 return
             }
             let location = CLLocation(latitude: currLocalization.coordinate.latitude, longitude: currLocalization.coordinate.longitude)
             CLGeocoder().reverseGeocodeLocation(location, preferredLocale: self.locale) { placemarks, _ in
                 if let placemark = placemarks?.first {
-                    self.cityName = placemark.locality?.uppercased() ?? "VOID"
-                    self.countryName = placemark.country?.uppercased() ?? "VOID"
-                    self.countryCode = placemark.isoCountryCode ?? "VOID"
+                    self.cityName = placemark.locality?.uppercased() ?? "CITY"
+                    self.countryName = placemark.country?.uppercased() ?? "COUNTRY"
+                    self.countryCode = placemark.isoCountryCode ?? "CODE"
                 }
             }
             

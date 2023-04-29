@@ -10,12 +10,37 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject var weather: MainViewVC
+    @State var isShowingWeather = false
     
     init(weatherSource: WeatherProviding) {
         _weather = StateObject(wrappedValue: MainViewVC(weatherSource: weatherSource))
     }
     
     var body: some View {
+        Group {
+            if isShowingWeather, weather.isWeatherFetched {
+                showWeather
+            } else {
+                SplashScreenView(finishedSplashScreen: $isShowingWeather)
+            }
+        }
+        .onChange(of: weather.isWeatherFetched) { newValue in
+            print(newValue)
+        }
+        .onAppear {
+            print(weather.isWeatherFetched)
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView(weatherSource: MockWeatherProvider())
+    }
+}
+
+extension MainView {
+    var showWeather: some View {
         ZStack {
             
             // MARK: Current Temperature
@@ -35,7 +60,7 @@ struct MainView: View {
                 Circle()
                     .foregroundColor(.purple)
                     .blur(radius: 30)
-                    .offset(x: 0, y: -100)
+                    .offset(x: -20, y: -100)
                 Circle()
                     .foregroundColor(.red)
                     .blur(radius: 30)
@@ -43,15 +68,15 @@ struct MainView: View {
                 Circle()
                     .foregroundColor(.orange)
                     .blur(radius: 30)
-                    .offset(x: 25, y: 0)
+                    .offset(x: 20, y: 0)
                 Circle()
                     .foregroundColor(.white)
                     .blur(radius: 30)
-                    .offset(x: 50, y: 50)
+                    .offset(x: 40, y: 50)
                 Circle()
                     .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
                     .blur(radius: 20)
-                    .offset(x: 75, y: 400)
+                    .offset(x: 160, y: 350)
                     .frame(width: 125)
             }
             
@@ -104,14 +129,7 @@ struct MainView: View {
         }
         .onAppear {
             weather.fetchWeather()
-            print("\(weather.currentLocation.locationManager.location?.coordinate.latitude)")
             weather.getLocation()
         }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView(weatherSource: MockWeatherProvider())
     }
 }
