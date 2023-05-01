@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 
-class MainViewVC: ObservableObject {
+class WeatherViewVC: ObservableObject {
     
     @Published var currentWeather: WeatherModel?
     @Published var currentLocation = LocationSource()

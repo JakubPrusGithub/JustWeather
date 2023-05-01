@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @ObservedObject var weather: MainViewVC
+    @ObservedObject var weather: WeatherViewVC
     
     var body: some View {
         ZStack {
@@ -81,6 +81,6 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(weather: MainViewVC(weatherSource: MockWeatherProvider()))
+        WeatherView(weather: WeatherViewVC(weatherSource: MockWeatherProvider()))
     }
 }

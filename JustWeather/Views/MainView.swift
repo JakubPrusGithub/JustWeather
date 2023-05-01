@@ -9,20 +9,24 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject var weather: MainViewVC
-    @State var isShowingWeather = false
+    @StateObject var networkMonitor = NetworkMonitor()
+    @StateObject var weather: WeatherViewVC
+    @State var finishedSplashScreen = false
     
     init(weatherSource: WeatherProviding) {
-        _weather = StateObject(wrappedValue: MainViewVC(weatherSource: weatherSource))
+        _weather = StateObject(wrappedValue: WeatherViewVC(weatherSource: weatherSource))
     }
     
     var body: some View {
         Group {
-            if isShowingWeather, weather.isWeatherFetched {
+            if finishedSplashScreen, weather.isWeatherFetched {
                 WeatherView(weather: weather)
             } else {
-                SplashScreenView(finishedSplashScreen: $isShowingWeather)
+                SplashScreenView(finishedSplashScreen: $finishedSplashScreen)
             }
+        }
+        .alert("There is no internet connection.", isPresented: $networkMonitor.showError) {
+            Button("OK") {}
         }
     }
 }

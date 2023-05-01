@@ -12,6 +12,7 @@ struct WeatherBackgroundView: View {
     @State var xOffsetCircle: CGFloat = 0
     @State var yOffsetCircle: CGFloat = 0
     @State var opacityCircle: Double = 0
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack {
@@ -31,7 +32,7 @@ struct WeatherBackgroundView: View {
                 .offset(x: xOffsetCircle, y: 0)
                 .opacity(opacityCircle)
             Circle()
-                .foregroundColor(.white)
+                .foregroundColor(colorScheme == .dark ? .black : .white)
                 .blur(radius: 30)
                 .offset(x: xOffsetCircle*2, y: yOffsetCircle)
                 .opacity(opacityCircle)

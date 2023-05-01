@@ -10,7 +10,7 @@ import CoreLocation
 
 class LocationSource : NSObject, CLLocationManagerDelegate, ObservableObject {
     
-    var locationManager = CLLocationManager()
+    @Published var locationManager = CLLocationManager()
     @Published var authorizationStatus: CLAuthorizationStatus?
     @Published var currLocalization: CLLocation?
     
