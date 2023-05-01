@@ -36,7 +36,6 @@ class MainViewVC: ObservableObject {
             .sink { _ in
                 
             } receiveValue: { [weak self] weather in
-                print(weather)
                 self?.currentWeather = weather
                 self?.isWeatherFetched = true
             }

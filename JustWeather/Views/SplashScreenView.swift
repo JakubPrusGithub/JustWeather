@@ -23,10 +23,10 @@ struct SplashScreenView: View {
                 .font(.custom("GothicA1-Medium", size: 45))
             Text("JUST WEATHER")
                 .font(.custom("GothicA1-Medium", size: 45))
-                .offset(x: textOffset, y: textOffset)
+                .offset(x: 0, y: textOffset)
             Text("JUST WEATHER")
                 .font(.custom("GothicA1-Medium", size: 45))
-                .offset(x: -textOffset, y: -textOffset)
+                .offset(x: 0, y: -textOffset)
         }
         .opacity(opacityValue)
         .onAppear {
@@ -37,7 +37,7 @@ struct SplashScreenView: View {
                 textOffset = 75
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                withAnimation(.easeIn) {
+                withAnimation(.easeIn(duration: 0.5)) {
                     finishedSplashScreen = true
                 }
             }
