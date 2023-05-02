@@ -56,9 +56,6 @@ struct WeatherView: View {
                 Divider()
                 VStack {
                     Text("[TEMPERATURE]")
-                        .onTapGesture {
-                            weather.getLocation()
-                        }
                     HStack {
                         Text("MINIMAL")
                         Spacer()

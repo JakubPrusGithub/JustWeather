@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import CoreLocation
+import UIKit
 
 class WeatherViewVC: ObservableObject {
     
@@ -17,6 +18,7 @@ class WeatherViewVC: ObservableObject {
     @Published var countryCode = ""
     @Published var cityName = ""
     @Published var isWeatherFetched = false
+    @Published var isLocationDisabled = false
     
     var cancellables = Set<AnyCancellable>()
     let weatherSource: WeatherProviding
@@ -25,6 +27,7 @@ class WeatherViewVC: ObservableObject {
     init(weatherSource: WeatherProviding) {
         self.weatherSource = weatherSource
         getLocation()
+        locationPermission()
     }
     
     func fetchWeather(lat: Double, lon: Double) {
@@ -49,14 +52,40 @@ class WeatherViewVC: ObservableObject {
         return formatter.string(from: Date()).uppercased()
     }
     
-    func generateURL(lat: Double, lon: Double) -> URL {
+    private func generateURL(lat: Double, lon: Double) -> URL {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
         guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }
         return url
     }
     
-    func getLocation() {
-        
+    func checkLocationPermission() {
+        self.currentLocation.locationManagerDidChangeAuthorization(self.currentLocation.locationManager)
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    private func locationPermission() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.currentLocation.$authorizationStatus.receive(on: DispatchQueue.main).sink { [weak self] status in
+                switch status {
+                case .authorizedAlways:
+                    self?.isLocationDisabled = false
+                case .authorizedWhenInUse:
+                    self?.isLocationDisabled = false
+                case .denied:
+                    self?.isLocationDisabled = true
+                case .restricted:
+                    self?.isLocationDisabled = true
+                default:
+                    self?.isLocationDisabled = true
+                }
+            }
+            .store(in: &self.cancellables)
+        }
+    }
+    
+    private func getLocation() {
         currentLocation.$currLocalization.receive(on: DispatchQueue.main).sink { _ in
             guard let currLocalization = self.currentLocation.currLocalization else {
                 self.countryName = "CITY"

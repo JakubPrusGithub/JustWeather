@@ -25,8 +25,13 @@ struct MainView: View {
                 SplashScreenView(finishedSplashScreen: $finishedSplashScreen)
             }
         }
-        .alert("There is no internet connection.", isPresented: $networkMonitor.showError) {
+        .alert("Sorry, there is no internet connection.", isPresented: $networkMonitor.showError) {
             Button("OK") {}
+        }
+        .alert("Please allow location service.", isPresented: $weather.isLocationDisabled) {
+            Button("OK") {
+                weather.checkLocationPermission()
+            }
         }
     }
 }

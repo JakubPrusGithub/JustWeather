@@ -124,6 +124,7 @@
 		D3EBC01B29F1D96400250369 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D316C3162A0013CB00E5337F /* NetworkMonitor.swift */,
 				D3EBC01C29F1D97000250369 /* WeatherSource.swift */,
 				D3EBC03729FBEEE200250369 /* LocationSource.swift */,
 			);
@@ -145,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				D3EBC02A29F5AD9F00250369 /* WeatherViewVC.swift */,
-				D316C3162A0013CB00E5337F /* NetworkMonitor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current localization to get accurate weather.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current location to get accurate weather.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -478,7 +478,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current localization to get accurate weather.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current location to get accurate weather.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
