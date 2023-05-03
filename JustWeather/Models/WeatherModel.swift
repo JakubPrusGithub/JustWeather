@@ -20,12 +20,14 @@ struct WeatherModel: Decodable, Identifiable, Equatable {
         case temperature = "main"
     }
     
-    struct CurrentWeather: Decodable { // Current weather
+    // Current weather
+    struct CurrentWeather: Decodable {
         let main: String
         let description: String
     }
     
-    struct Temperature: Decodable { // Temperature
+    // Temperature
+    struct Temperature: Decodable {
         let temp: Double
         let temp_min: Double
         let temp_max: Double

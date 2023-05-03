@@ -15,6 +15,7 @@ class NetworkMonitor: ObservableObject {
     @Published var showError = false
     
     init() {
+        // Check for internet connection
         networkMonitor.pathUpdateHandler = { path in
             Task {
                 await MainActor.run {
