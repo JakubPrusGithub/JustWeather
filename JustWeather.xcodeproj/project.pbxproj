@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4011043BF6E011347E358D2E /* Pods_JustWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6322C401C9D0646E3052EAD2 /* Pods_JustWeather.framework */; };
 		D316C3172A0013CB00E5337F /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C3162A0013CB00E5337F /* NetworkMonitor.swift */; };
-		D316C31F2A04517100E5337F /* JustWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C31E2A04517100E5337F /* JustWeatherTests.swift */; };
+		D316C3272A059E2A00E5337F /* WeatherViewVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C3262A059E2A00E5337F /* WeatherViewVCTests.swift */; };
 		D34D15F029FE885600679A1C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D15EF29FE885600679A1C /* WeatherView.swift */; };
 		D34D15F229FE891B00679A1C /* WeatherBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D15F129FE891B00679A1C /* WeatherBackgroundView.swift */; };
 		D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */; };
@@ -39,7 +39,8 @@
 		6322C401C9D0646E3052EAD2 /* Pods_JustWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D316C3162A0013CB00E5337F /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		D316C31C2A04517100E5337F /* JustWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D316C31E2A04517100E5337F /* JustWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustWeatherTests.swift; sourceTree = "<group>"; };
+		D316C3252A059E2A00E5337F /* JustWeatherTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustWeatherTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D316C3262A059E2A00E5337F /* WeatherViewVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewVCTests.swift; sourceTree = "<group>"; };
 		D34D15EF29FE885600679A1C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		D34D15F129FE891B00679A1C /* WeatherBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackgroundView.swift; sourceTree = "<group>"; };
 		D3EBC00429EDCE8900250369 /* JustWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +97,8 @@
 		D316C31D2A04517100E5337F /* JustWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				D316C31E2A04517100E5337F /* JustWeatherTests.swift */,
+				D316C3262A059E2A00E5337F /* WeatherViewVCTests.swift */,
+				D316C3252A059E2A00E5337F /* JustWeatherTests-Bridging-Header.h */,
 			);
 			path = JustWeatherTests;
 			sourceTree = "<group>";
@@ -251,6 +253,7 @@
 				TargetAttributes = {
 					D316C31B2A04517100E5337F = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = D3EBC00329EDCE8900250369;
 					};
 					D3EBC00329EDCE8900250369 = {
@@ -361,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D316C31F2A04517100E5337F /* JustWeatherTests.swift in Sources */,
+				D316C3272A059E2A00E5337F /* WeatherViewVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2637HTLV24;
@@ -406,6 +410,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.JustWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "JustWeatherTests/JustWeatherTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustWeather.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JustWeather";
@@ -416,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2637HTLV24;
@@ -425,6 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.JustWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "JustWeatherTests/JustWeatherTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustWeather.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JustWeather";
