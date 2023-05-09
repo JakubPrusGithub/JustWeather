@@ -3,6 +3,8 @@
 <h3> JUSTWEATHER JUSTWEATHER JUSTWEATHER </h3>
 
 App shows actual temperature and weather in user's current location. That's it!
+
+It is worth mentioning that the application requests the user's location and checks for an Internet connection.
 <br><br>
 
 
@@ -28,12 +30,14 @@ I wanted to create a modern and avant-garde looking app for the simple purpose o
 </ul><br>
 
 <h2> [PRESENTATION] </h2>
-<p float="left">
-  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/15a8607f-743e-41a7-8fda-554726a4692b" width=24% />
-  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/36b00236-dc75-4721-822c-153070da60de" width=24% /> 
-  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/4337cae4-3e79-4e03-b26c-35dba9cc015b" width=24% />
-  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/00e9bc49-5247-4b8a-a923-4dce832113a4" width=24% />
-</p><br><br>
+<div float="left">
+  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/15a8607f-743e-41a7-8fda-554726a4692b" width="24%"></img>
+  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/36b00236-dc75-4721-822c-153070da60de" width="24%"></img>
+  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/e54a4196-2663-4b34-8b02-0b611ac6188a" width="24%"></img>
+  <img src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/4fdcfa3f-71fd-4dd6-96bb-555f75024d18" width="24%"></img>
+  <video src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/4337cae4-3e79-4e03-b26c-35dba9cc015b"></video>
+  <video src="https://github.com/JakubPrusGithub/JustWeather/assets/56788369/00e9bc49-5247-4b8a-a923-4dce832113a4"></video>
+</div><br><br>
 
 
 <h2> ?FUTURE? </h2>
