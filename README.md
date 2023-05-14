@@ -42,5 +42,5 @@ I wanted to create a modern and avant-garde looking app for the simple purpose o
 
 <h2> ?FUTURE? </h2>
 
-Ability to choose another location and look at the weather in the future.
+The future plans are to make it possible to choose another location and look at the weather in the future.
 <br><br>
