@@ -17,10 +17,10 @@ struct JustWeatherApp: App {
         container.register(WeatherProviding.self) { _ in
             
             // Use MockWeatherProvider for mock data
-            MockWeatherProvider()
+            // MockWeatherProvider()
             
             // Use WeatherProvider for real data from api call
-            // WeatherProvider()
+            WeatherProvider()
         }
         .inObjectScope(.container)
         
