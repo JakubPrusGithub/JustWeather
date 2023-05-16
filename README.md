@@ -19,6 +19,7 @@ I wanted to create a modern and avant-garde looking app for the simple purpose o
   <li>SwiftUI</li>
   <li>Combine</li>
   <li>CoreLocation</li>
+  <li>WidgetKit</li>
   <li>Swinject</li>
   <li>SwiftLint</li>
   <li>CocoaPods</li>
