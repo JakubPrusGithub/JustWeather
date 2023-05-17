@@ -9,10 +9,15 @@ import SwiftUI
 import WidgetKit
 
 struct JustWeatherWidgetEntryView: View {
+    @Environment(\.widgetFamily) var widgetFamily
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        if widgetFamily == .systemSmall {
+            WidgetViewSmall(entry: entry)
+        } else if widgetFamily == .systemMedium {
+            WidgetViewMedium(entry: entry)
+        }
     }
 }
 

@@ -93,13 +93,22 @@ class WeatherViewVC: ObservableObject {
     // Fetch current location
     private func getLocation() {
         currentLocation.$currLocalization.receive(on: DispatchQueue.main).sink { _ in
+            
+            // Check for valid location
             guard let currLocalization = self.currentLocation.currLocalization else {
                 self.countryName = "CITY"
                 self.cityName = "COUNTRY"
                 self.countryCode = "CODE"
                 return
             }
+            
+            // User's location
             let location = CLLocation(latitude: currLocalization.coordinate.latitude, longitude: currLocalization.coordinate.longitude)
+            
+            // Save current location to User Defaults (for widget usage)
+            UserDefaults.standard.set(location, forKey: "location")
+            
+            // Convert coordinates to shortcuts and codes
             CLGeocoder().reverseGeocodeLocation(location, preferredLocale: self.locale) { placemarks, _ in
                 if let placemark = placemarks?.first {
                     self.cityName = placemark.locality?.uppercased() ?? "CITY"

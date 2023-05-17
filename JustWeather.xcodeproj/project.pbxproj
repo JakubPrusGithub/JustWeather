@@ -22,6 +22,9 @@
 		D37C7DE62A157A5A00A396E3 /* WidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DE42A157A5700A396E3 /* WidgetModel.swift */; };
 		D37C7DE92A157AE100A396E3 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DE72A157ADD00A396E3 /* WidgetView.swift */; };
 		D37C7DEC2A157B7100A396E3 /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DEA2A157B3A00A396E3 /* WidgetProvider.swift */; };
+		D37C7DED2A1581DA00A396E3 /* WeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01C29F1D97000250369 /* WeatherSource.swift */; };
+		D37C7DEF2A158F4500A396E3 /* WidgetViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DEE2A158F4500A396E3 /* WidgetViewSmall.swift */; };
+		D37C7DF22A158F5E00A396E3 /* WidgetViewMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DF12A158F5E00A396E3 /* WidgetViewMedium.swift */; };
 		D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */; };
 		D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00B29EDCE8A00250369 /* Assets.xcassets */; };
 		D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */; };
@@ -84,6 +87,8 @@
 		D37C7DE42A157A5700A396E3 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
 		D37C7DE72A157ADD00A396E3 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		D37C7DEA2A157B3A00A396E3 /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
+		D37C7DEE2A158F4500A396E3 /* WidgetViewSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewSmall.swift; sourceTree = "<group>"; };
+		D37C7DF12A158F5E00A396E3 /* WidgetViewMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewMedium.swift; sourceTree = "<group>"; };
 		D3EBC00429EDCE8900250369 /* JustWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustWeatherApp.swift; sourceTree = "<group>"; };
 		D3EBC00B29EDCE8A00250369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,15 +163,33 @@
 		D37C7DD32A12D80D00A396E3 /* JustWeatherWidget */ = {
 			isa = PBXGroup;
 			children = (
+				D37C7DF32A158F6600A396E3 /* Models */,
+				D37C7DF02A158F4A00A396E3 /* Views */,
 				D37C7DD42A12D80D00A396E3 /* JustWeatherWidgetBundle.swift */,
 				D37C7DD62A12D80D00A396E3 /* JustWeatherWidget.swift */,
-				D37C7DE42A157A5700A396E3 /* WidgetModel.swift */,
-				D37C7DE72A157ADD00A396E3 /* WidgetView.swift */,
 				D37C7DEA2A157B3A00A396E3 /* WidgetProvider.swift */,
 				D37C7DD82A12D80E00A396E3 /* Assets.xcassets */,
 				D37C7DDA2A12D80E00A396E3 /* Info.plist */,
 			);
 			path = JustWeatherWidget;
+			sourceTree = "<group>";
+		};
+		D37C7DF02A158F4A00A396E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D37C7DE72A157ADD00A396E3 /* WidgetView.swift */,
+				D37C7DEE2A158F4500A396E3 /* WidgetViewSmall.swift */,
+				D37C7DF12A158F5E00A396E3 /* WidgetViewMedium.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D37C7DF32A158F6600A396E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D37C7DE42A157A5700A396E3 /* WidgetModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D3EBBFFB29EDCE8900250369 = {
@@ -472,8 +495,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37C7DEF2A158F4500A396E3 /* WidgetViewSmall.swift in Sources */,
 				D37C7DEC2A157B7100A396E3 /* WidgetProvider.swift in Sources */,
+				D37C7DED2A1581DA00A396E3 /* WeatherSource.swift in Sources */,
 				D37C7DD72A12D80D00A396E3 /* JustWeatherWidget.swift in Sources */,
+				D37C7DF22A158F5E00A396E3 /* WidgetViewMedium.swift in Sources */,
 				D37C7DE62A157A5A00A396E3 /* WidgetModel.swift in Sources */,
 				D37C7DE32A157A3200A396E3 /* WeatherModel.swift in Sources */,
 				D37C7DD52A12D80D00A396E3 /* JustWeatherWidgetBundle.swift in Sources */,
