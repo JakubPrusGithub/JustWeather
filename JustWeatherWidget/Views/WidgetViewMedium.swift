@@ -7,26 +7,63 @@
 
 import SwiftUI
 import WidgetKit
+import CoreLocation
 
 struct WidgetViewMedium: View {
     var entry: Provider.Entry
+    @State var location = CLLocation()
+    @State var cityName = "CITY"
+    @State var xOffsetCircle: CGFloat = 75
+    @State var yOffsetCircle: CGFloat = 10
 
     var body: some View {
         ZStack {
-            Circle()
-                .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
-                .blur(radius: 20)
-                .frame(width: 90)
-            VStack {
-                Text("\(Int(entry.weather.temperature.temp))°C")
-                    .font(.custom("GothicA1-Medium", size: 66))
-                VStack {
-                    Text("Last updated: ")
-                    Text(entry.date.formatted())
-                }
-                .font(.caption)
+            ZStack {
+                Circle()
+                    .foregroundColor(.purple)
+                    .blur(radius: 30)
+                    .offset(x: -xOffsetCircle, y: -yOffsetCircle*2)
+                Circle()
+                    .foregroundColor(.red)
+                    .blur(radius: 30)
+                    .offset(x: 0, y: -yOffsetCircle)
+                Circle()
+                    .foregroundColor(.orange)
+                    .blur(radius: 30)
+                    .offset(x: xOffsetCircle, y: 0)
+                Circle()
+                    .foregroundColor(.white)
+                    .blur(radius: 30)
+                    .offset(x: xOffsetCircle*2, y: yOffsetCircle)
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
+                    .blur(radius: 15)
+                    .offset(x: xOffsetCircle*2, y: 10)
+                    .frame(width: 125)
             }
-            .padding(.top)
+            VStack {
+                Text(cityName)
+                    .font(.custom("GothicA1-Medium", size: 35))
+                VStack {
+                    Text("\(Int(entry.weather.temperature.temp))°C")
+                        .font(.custom("GothicA1-Medium", size: 66))
+                    VStack {
+                        Text("Last updated: ")
+                        Text(entry.date.formatted())
+                    }
+                    .font(.caption)
+                }
+            }
+        }
+        .onAppear {
+            if let location = UserDefaults.standard.object(forKey: "location") as? CLLocation {
+                let locale = Locale(identifier: "en_US")
+                CLGeocoder().reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, _ in
+                    if let placemark = placemarks?.first {
+                        self.cityName = placemark.locality?.uppercased() ?? "CITY"
+                    }
+                }
+            }
         }
     }
 }

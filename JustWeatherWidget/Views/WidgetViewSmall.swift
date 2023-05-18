@@ -15,10 +15,10 @@ struct WidgetViewSmall: View {
         ZStack {
             Circle()
                 .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
-                .blur(radius: 20)
-                .frame(width: 90)
+                .blur(radius: 40)
+                .frame(width: 115)
             VStack {
-                Text("\(Int(entry.weather.temperature.temp))°C")
+                Text("\(Int(entry.weather.temperature.temp))°")
                     .font(.custom("GothicA1-Medium", size: 66))
                 VStack {
                     Text("Last updated: ")
