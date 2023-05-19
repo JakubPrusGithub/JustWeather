@@ -13,7 +13,7 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> WidgetWeatherModel {
         WidgetWeatherModel(date: Date(), weather: .sampleWeather)
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (WidgetWeatherModel) -> Void) {
         let entry = WidgetWeatherModel(date: Date(), weather: .sampleWeather)
         completion(entry)
@@ -26,24 +26,28 @@ struct Provider: TimelineProvider {
         let weatherProvider = WeatherProvider()
         let currentDate = Date()
         var cancellables = Set<AnyCancellable>()
-        if let latitude = UserDefaults.standard.object(forKey: "user_location_latitude") as? Double,
-            let longitude = UserDefaults.standard.object(forKey: "user_location_longitude") as? Double {
-            weatherProvider.getWeather(url: generateURL(lat: latitude, lon: longitude))
-                .sink { completion in
-                    switch completion {
-                    case .finished:
-                        print("Finished downloading weather for widget")
-                    case .failure(let error):
-                        print("Error downloading weather for widget: \(error.localizedDescription)")
-                    }
-                } receiveValue: { data in
-                    guard let data = data else { return print("Error downloading weather for widget") }
-                    weather = data
+        
+        let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+        let latitude = sharedUserDefaults?.double(forKey: SharedUserDefaults.latitude) ?? 0.0
+        let longitude = sharedUserDefaults?.double(forKey: SharedUserDefaults.longitude) ?? 0.0
+        
+        weatherProvider.getWeather(url: generateURL(lat: latitude, lon: longitude))
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Finished downloading weather for widget")
+                case .failure(let error):
+                    print("Error downloading weather for widget: \(error.localizedDescription)")
                 }
-                .store(in: &cancellables)
-        }
+            } receiveValue: { data in
+                guard let data = data else { return print("Error downloading weather for widget") }
+                weather = data
+            }
+            .store(in: &cancellables)
+        
         let entry = WidgetWeatherModel(date: .now, weather: weather)
         entries.append(entry)
+        
         let timeline = Timeline(entries: entries, policy: .after(currentDate.addingTimeInterval(3600)))
         completion(timeline)
     }

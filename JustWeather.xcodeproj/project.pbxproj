@@ -25,6 +25,9 @@
 		D37C7DED2A1581DA00A396E3 /* WeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC01C29F1D97000250369 /* WeatherSource.swift */; };
 		D37C7DEF2A158F4500A396E3 /* WidgetViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DEE2A158F4500A396E3 /* WidgetViewSmall.swift */; };
 		D37C7DF22A158F5E00A396E3 /* WidgetViewMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DF12A158F5E00A396E3 /* WidgetViewMedium.swift */; };
+		D37C7DFB2A181A9400A396E3 /* UserDefaultsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DFA2A181A9400A396E3 /* UserDefaultsNames.swift */; };
+		D37C7DFC2A181A9700A396E3 /* UserDefaultsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DFA2A181A9400A396E3 /* UserDefaultsNames.swift */; };
+		D37C7DFD2A181A9800A396E3 /* UserDefaultsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C7DFA2A181A9400A396E3 /* UserDefaultsNames.swift */; };
 		D3EBC00829EDCE8900250369 /* JustWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */; };
 		D3EBC00C29EDCE8A00250369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00B29EDCE8A00250369 /* Assets.xcassets */; };
 		D3EBC00F29EDCE8A00250369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EBC00E29EDCE8A00250369 /* Preview Assets.xcassets */; };
@@ -89,6 +92,9 @@
 		D37C7DEA2A157B3A00A396E3 /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
 		D37C7DEE2A158F4500A396E3 /* WidgetViewSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewSmall.swift; sourceTree = "<group>"; };
 		D37C7DF12A158F5E00A396E3 /* WidgetViewMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewMedium.swift; sourceTree = "<group>"; };
+		D37C7DF82A18197600A396E3 /* JustWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustWeather.entitlements; sourceTree = "<group>"; };
+		D37C7DF92A181A4600A396E3 /* JustWeatherWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustWeatherWidgetExtension.entitlements; sourceTree = "<group>"; };
+		D37C7DFA2A181A9400A396E3 /* UserDefaultsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsNames.swift; sourceTree = "<group>"; };
 		D3EBC00429EDCE8900250369 /* JustWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustWeatherApp.swift; sourceTree = "<group>"; };
 		D3EBC00B29EDCE8A00250369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		D3EBBFFB29EDCE8900250369 = {
 			isa = PBXGroup;
 			children = (
+				D37C7DF92A181A4600A396E3 /* JustWeatherWidgetExtension.entitlements */,
 				D3EBC00629EDCE8900250369 /* JustWeather */,
 				D316C31D2A04517100E5337F /* JustWeatherTests */,
 				D37C7DD32A12D80D00A396E3 /* JustWeatherWidget */,
@@ -217,6 +224,7 @@
 		D3EBC00629EDCE8900250369 /* JustWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D37C7DF82A18197600A396E3 /* JustWeather.entitlements */,
 				D3EBC00729EDCE8900250369 /* JustWeatherApp.swift */,
 				D3EBC02329F304CB00250369 /* Info.plist */,
 				D3EBC02229F1E49100250369 /* Assets */,
@@ -250,6 +258,7 @@
 				D316C3162A0013CB00E5337F /* NetworkMonitor.swift */,
 				D3EBC01C29F1D97000250369 /* WeatherSource.swift */,
 				D3EBC03729FBEEE200250369 /* LocationSource.swift */,
+				D37C7DFA2A181A9400A396E3 /* UserDefaultsNames.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -488,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D316C3272A059E2A00E5337F /* WeatherViewVCTests.swift in Sources */,
+				D37C7DFD2A181A9800A396E3 /* UserDefaultsNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +512,7 @@
 				D37C7DF22A158F5E00A396E3 /* WidgetViewMedium.swift in Sources */,
 				D37C7DE62A157A5A00A396E3 /* WidgetModel.swift in Sources */,
 				D37C7DE32A157A3200A396E3 /* WeatherModel.swift in Sources */,
+				D37C7DFC2A181A9700A396E3 /* UserDefaultsNames.swift in Sources */,
 				D37C7DD52A12D80D00A396E3 /* JustWeatherWidgetBundle.swift in Sources */,
 				D37C7DE92A157AE100A396E3 /* WidgetView.swift in Sources */,
 			);
@@ -511,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37C7DFB2A181A9400A396E3 /* UserDefaultsNames.swift in Sources */,
 				D3EBC03A29FDB7AD00250369 /* SplashScreenView.swift in Sources */,
 				D3EBC02029F1E45900250369 /* MainView.swift in Sources */,
 				D3EBC01D29F1D97000250369 /* WeatherSource.swift in Sources */,
@@ -588,6 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JustWeatherWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2637HTLV24;
@@ -616,6 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JustWeatherWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2637HTLV24;
@@ -760,6 +774,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JustWeather/JustWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JustWeather/Assets/Preview Content\"";
@@ -794,6 +809,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JustWeather/JustWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JustWeather/Assets/Preview Content\"";
