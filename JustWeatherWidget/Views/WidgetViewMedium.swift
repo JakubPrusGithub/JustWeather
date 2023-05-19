@@ -14,7 +14,7 @@ struct WidgetViewMedium: View {
     @State var location = CLLocation()
     @State var cityName = "CITY"
     @State var xOffsetCircle: CGFloat = 75
-    @State var yOffsetCircle: CGFloat = 10
+    @State var yOffsetCircle: CGFloat = 0
 
     var body: some View {
         ZStack {
@@ -56,7 +56,9 @@ struct WidgetViewMedium: View {
             }
         }
         .onAppear {
-            if let location = UserDefaults.standard.object(forKey: "location") as? CLLocation {
+            if let latitude = UserDefaults.standard.object(forKey: "user_location_latitude") as? Double,
+                let longitude = UserDefaults.standard.object(forKey: "user_location_longitude") as? Double {
+                let location = CLLocation(latitude: latitude, longitude: longitude)
                 let locale = Locale(identifier: "en_US")
                 CLGeocoder().reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, _ in
                     if let placemark = placemarks?.first {

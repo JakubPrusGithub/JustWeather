@@ -18,6 +18,7 @@ struct Provider: TimelineProvider {
         let entry = WidgetWeatherModel(date: Date(), weather: .sampleWeather)
         completion(entry)
     }
+    
     @MainActor
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetWeatherModel>) -> Void) {
         var entries: [WidgetWeatherModel] = []
@@ -25,8 +26,9 @@ struct Provider: TimelineProvider {
         let weatherProvider = WeatherProvider()
         let currentDate = Date()
         var cancellables = Set<AnyCancellable>()
-        if let location = UserDefaults.standard.object(forKey: "location") as? CLLocation {
-            weatherProvider.getWeather(url: generateURL(lat: location.coordinate.latitude, lon: location.coordinate.longitude))
+        if let latitude = UserDefaults.standard.object(forKey: "user_location_latitude") as? Double,
+            let longitude = UserDefaults.standard.object(forKey: "user_location_longitude") as? Double {
+            weatherProvider.getWeather(url: generateURL(lat: latitude, lon: longitude))
                 .sink { completion in
                     switch completion {
                     case .finished:
@@ -45,6 +47,7 @@ struct Provider: TimelineProvider {
         let timeline = Timeline(entries: entries, policy: .after(currentDate.addingTimeInterval(3600)))
         completion(timeline)
     }
+    
     func generateURL(lat: Double, lon: Double) -> URL {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
         guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }

@@ -106,7 +106,8 @@ class WeatherViewVC: ObservableObject {
             let location = CLLocation(latitude: currLocalization.coordinate.latitude, longitude: currLocalization.coordinate.longitude)
             
             // Save current location to User Defaults (for widget usage)
-            UserDefaults.standard.set(location, forKey: "location")
+            UserDefaults.standard.set(location.coordinate.latitude, forKey: "user_location_latitude")
+            UserDefaults.standard.set(location.coordinate.longitude, forKey: "user_location_longitude")
             
             // Convert coordinates to shortcuts and codes
             CLGeocoder().reverseGeocodeLocation(location, preferredLocale: self.locale) { placemarks, _ in
