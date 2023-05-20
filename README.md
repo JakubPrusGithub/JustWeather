@@ -2,9 +2,9 @@
 
 <h3> JUSTWEATHER JUSTWEATHER JUSTWEATHER </h3>
 
-App shows actual temperature and weather in user's current location. That's it!
+App shows actual temperature and weather in user's current location but in the different - unusual way. That's it!
 
-It is worth mentioning that the application requests the user's location and checks for an Internet connection.
+It is worth mentioning that the application automatically requests the user's location and checks for an Internet connection.
 <br><br>
 
 
