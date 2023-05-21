@@ -105,11 +105,6 @@ class WeatherViewVC: ObservableObject {
             // User's location
             let location = CLLocation(latitude: currLocalization.coordinate.latitude, longitude: currLocalization.coordinate.longitude)
             
-            // Save current location to User Defaults (for widget usage)
-            let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
-            sharedUserDefaults?.set(Double(location.coordinate.latitude), forKey: "user_location_latitude")
-            sharedUserDefaults?.set(Double(location.coordinate.longitude), forKey: "user_location_longitude")
-            
             // Convert coordinates to shortcuts and codes
             CLGeocoder().reverseGeocodeLocation(location, preferredLocale: self.locale) { placemarks, _ in
                 if let placemark = placemarks?.first {
@@ -117,6 +112,12 @@ class WeatherViewVC: ObservableObject {
                     self.countryName = placemark.country?.uppercased() ?? "COUNTRY"
                     self.countryCode = placemark.isoCountryCode ?? "CODE"
                     self.fetchWeather(lat: currLocalization.coordinate.latitude, lon: currLocalization.coordinate.longitude)
+                    
+                    // Save current location to User Defaults (for widget usage)
+                    let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
+                    sharedUserDefaults?.set(self.cityName, forKey: SharedUserDefaults.cityName)
+                    sharedUserDefaults?.set(Double(location.coordinate.latitude), forKey: SharedUserDefaults.latitude)
+                    sharedUserDefaults?.set(Double(location.coordinate.longitude), forKey: SharedUserDefaults.longitude)
                 }
             }
             

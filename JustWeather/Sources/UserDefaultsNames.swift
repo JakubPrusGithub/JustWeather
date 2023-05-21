@@ -11,4 +11,5 @@ struct SharedUserDefaults {
     static let longitude = "user_location_longitude"
     static let latitude = "user_location_latitude"
     static let suiteName = "group.JakubPrus.JustWeather"
+    static let cityName = "user_location_city"
 }

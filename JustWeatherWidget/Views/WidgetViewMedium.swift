@@ -42,8 +42,12 @@ struct WidgetViewMedium: View {
                     .frame(width: 125)
             }
             VStack {
-                Text(cityName)
-                    .font(.custom("GothicA1-Medium", size: 35))
+                HStack {
+                    Text(cityName)
+                        .font(.custom("GothicA1-Medium", size: 35))
+                    Text("- [" + (entry.weather.currWeather.first?.main ?? " - [WEATHER]") + "]")
+                        .font(.custom("GothicA1-Medium", size: 30))
+                }
                 VStack {
                     Text("\(Int(entry.weather.temperature.temp))°C")
                         .font(.custom("GothicA1-Medium", size: 66))
@@ -57,20 +61,7 @@ struct WidgetViewMedium: View {
         }
         .onAppear {
             let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
-            let latitude = sharedUserDefaults?.double(forKey: SharedUserDefaults.latitude) ?? 0.0
-            let longitude = sharedUserDefaults?.double(forKey: SharedUserDefaults.longitude) ?? 0.0
-            
-            let location = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
-            let locale = Locale(identifier: "en_US")
-            self.cityName = location.description
-            
-            CLGeocoder().reverseGeocodeLocation(location) { placemarks, _ in
-                
-                if let placemark = placemarks?.first {
-                    
-                    self.cityName = placemark.locality?.uppercased() ?? "UNKNOWN"
-                }
-            }
+            cityName = sharedUserDefaults?.string(forKey: SharedUserDefaults.cityName) ?? "CITY"
         }
     }
 }
