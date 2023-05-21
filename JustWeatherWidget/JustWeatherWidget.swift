@@ -16,7 +16,7 @@ struct JustWeatherWidget: Widget {
             JustWeatherWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("JustWeather's Widget")
-        .description("This widget simply shows current weather based on your location")
+        .description("This widget simply shows current weather and temperature based on your location")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

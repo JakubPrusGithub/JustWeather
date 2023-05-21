@@ -54,7 +54,7 @@ class WeatherViewVC: ObservableObject {
         return formatter.string(from: Date()).uppercased()
     }
     
-    // Create url from user location
+    // Create URL from user's location
     func generateURL(lat: Double, lon: Double) -> URL {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=4d4709bf04a5b6896ab2b456a4012c1d&units=metric"
         guard let url = URL(string: urlString) else { fatalError("Incorrect API link") }

@@ -17,9 +17,14 @@ struct WidgetViewSmall: View {
                 .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
                 .blur(radius: 40)
                 .frame(width: 115)
+            
+            // MARK: Weather text info
             VStack {
+                Text("[TEMPERATURE]")
+                    .font(.custom("GothicA1-Medium", size: 15))
                 Text("\(Int(entry.weather.temperature.temp))°")
                     .font(.custom("GothicA1-Medium", size: 66))
+                    .offset(x: 10)
                 VStack {
                     Text("Last updated: ")
                     Text(entry.date.formatted())
@@ -27,7 +32,7 @@ struct WidgetViewSmall: View {
                 .font(.caption)
             }
             .padding(.top)
-        }
+        } // ZStack
     }
 }
 

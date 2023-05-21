@@ -7,17 +7,17 @@
 
 import SwiftUI
 import WidgetKit
-import CoreLocation
 
 struct WidgetViewMedium: View {
     var entry: Provider.Entry
-    @State var location = CLLocation()
     @State var cityName = "CITY"
     @State var xOffsetCircle: CGFloat = 75
     @State var yOffsetCircle: CGFloat = 0
     
     var body: some View {
         ZStack {
+            
+            // MARK: Circles background
             ZStack {
                 Circle()
                     .foregroundColor(.purple)
@@ -39,8 +39,10 @@ struct WidgetViewMedium: View {
                     .foregroundColor(Color(red: 0, green: 0, blue: 0.8))
                     .blur(radius: 15)
                     .offset(x: xOffsetCircle*2, y: 10)
-                    .frame(width: 125)
-            }
+                    .frame(width: 100)
+            } // ZStack
+            
+            // MARK: Weather text info
             VStack {
                 HStack {
                     Text(cityName)
@@ -57,9 +59,10 @@ struct WidgetViewMedium: View {
                     }
                     .font(.caption)
                 }
-            }
-        }
+            } // VStack
+        } // ZStack
         .onAppear {
+            // Fetch city name from User Defaults
             let sharedUserDefaults = UserDefaults(suiteName: SharedUserDefaults.suiteName)
             cityName = sharedUserDefaults?.string(forKey: SharedUserDefaults.cityName) ?? "CITY"
         }
